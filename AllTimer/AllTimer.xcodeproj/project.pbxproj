@@ -15,6 +15,8 @@
 		AC7A71311C8EAFBB00274C5A /* AllTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7A71301C8EAFBB00274C5A /* AllTimerTests.swift */; };
 		AC7A713C1C8EAFBB00274C5A /* AllTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7A713B1C8EAFBB00274C5A /* AllTimerUITests.swift */; };
 		AC7A714A1C8EB05E00274C5A /* counrdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7A71491C8EB05E00274C5A /* counrdownViewController.swift */; };
+		AC7A714C1C8EB83200274C5A /* button01a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC7A714B1C8EB83200274C5A /* button01a.mp3 */; };
+		AC7A714E1C8EB88F00274C5A /* stopsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC7A714D1C8EB88F00274C5A /* stopsound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		AC7A713B1C8EAFBB00274C5A /* AllTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTimerUITests.swift; sourceTree = "<group>"; };
 		AC7A713D1C8EAFBB00274C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7A71491C8EB05E00274C5A /* counrdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = counrdownViewController.swift; sourceTree = "<group>"; };
+		AC7A714B1C8EB83200274C5A /* button01a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button01a.mp3; sourceTree = "<group>"; };
+		AC7A714D1C8EB88F00274C5A /* stopsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stopsound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		AC7A710F1C8EAFBB00274C5A = {
 			isa = PBXGroup;
 			children = (
+				AC7A714D1C8EB88F00274C5A /* stopsound.mp3 */,
+				AC7A714B1C8EB83200274C5A /* button01a.mp3 */,
 				AC7A711A1C8EAFBB00274C5A /* AllTimer */,
 				AC7A712F1C8EAFBB00274C5A /* AllTimerTests */,
 				AC7A713A1C8EAFBB00274C5A /* AllTimerUITests */,
@@ -236,7 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC7A71261C8EAFBB00274C5A /* LaunchScreen.storyboard in Resources */,
+				AC7A714C1C8EB83200274C5A /* button01a.mp3 in Resources */,
 				AC7A71231C8EAFBB00274C5A /* Assets.xcassets in Resources */,
+				AC7A714E1C8EB88F00274C5A /* stopsound.mp3 in Resources */,
 				AC7A71211C8EAFBB00274C5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

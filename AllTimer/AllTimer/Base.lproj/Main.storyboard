@@ -14,30 +14,139 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4O-JX-HMY">
+                                <rect key="frame" x="92" y="167" width="108" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="タイマー"/>
+                                <connections>
+                                    <segue destination="Xp5-YP-U8a" kind="modal" id="0GP-RO-3Jh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Countdown View Controller-->
         <scene sceneID="7v0-dm-YEj">
             <objects>
-                <viewController id="Xp5-YP-U8a" sceneMemberID="viewController">
+                <viewController id="Xp5-YP-U8a" customClass="countdownViewController" customModule="AllTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WM2-4h-fGY"/>
                         <viewControllerLayoutGuide type="bottom" id="6WC-WA-p1o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mNW-OU-Pw4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3f-w8-zHu">
+                                <rect key="frame" x="152" y="6" width="71" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nG9-zV-B0e">
+                                <rect key="frame" x="20" y="16" width="90" height="30"/>
+                                <state key="normal" title="インターバル"/>
+                                <connections>
+                                    <action selector="itbButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="CcS-Xt-SP2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGg-oJ-Xmb">
+                                <rect key="frame" x="257" y="16" width="30" height="30"/>
+                                <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="k0l-Qu-9RD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-dS-IyB">
+                                <rect key="frame" x="14" y="80" width="292" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMp-to-hVZ">
+                                <rect key="frame" x="100" y="163" width="120" height="30"/>
+                                <state key="normal" title="カウントスタート"/>
+                                <connections>
+                                    <action selector="startButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="5hW-jz-Wkh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H09-c4-m5b">
+                                <rect key="frame" x="51" y="224" width="46" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="TnJ-rr-Qo9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n02-sC-b1D">
+                                <rect key="frame" x="137" y="224" width="46" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="Noq-G9-L3Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlM-sN-g83">
+                                <rect key="frame" x="221" y="224" width="46" height="30"/>
+                                <state key="normal" title="Loop"/>
+                                <connections>
+                                    <action selector="loopButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="Mvc-tP-F9t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzo-ga-yDV">
+                                <rect key="frame" x="157" y="518" width="60" height="30"/>
+                                <state key="normal" title="時間選択"/>
+                                <connections>
+                                    <action selector="tapedselectButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="etM-fk-dQZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVL-xW-hNt">
+                                <rect key="frame" x="239" y="518" width="46" height="30"/>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="tapedclosedButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="01d-WF-nQs"/>
+                                </connections>
+                            </button>
+                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72H-LZ-F9T">
+                                <rect key="frame" x="0.0" y="257" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="479114207.59637803">
+                                    <!--2016-03-08 07:16:47 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePicker:" destination="Xp5-YP-U8a" eventType="valueChanged" id="05K-Ye-RkW"/>
+                                </connections>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="akV-YR-BQw">
+                                <rect key="frame" x="0.0" y="257" width="320" height="216"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="closeButton" destination="FVL-xW-hNt" id="PjR-ob-Go2"/>
+                        <outlet property="datePicker" destination="72H-LZ-F9T" id="YHu-oa-1Cm"/>
+                        <outlet property="itbButton" destination="nG9-zV-B0e" id="gou-CG-73p"/>
+                        <outlet property="itbLabel" destination="U3f-w8-zHu" id="M3D-KT-1uJ"/>
+                        <outlet property="loopButton" destination="HlM-sN-g83" id="KEF-T2-CjG"/>
+                        <outlet property="pickerView" destination="akV-YR-BQw" id="zuZ-uX-sya"/>
+                        <outlet property="resetButton" destination="n02-sC-b1D" id="aLC-YG-euG"/>
+                        <outlet property="selecttimeButton" destination="wzo-ga-yDV" id="Iut-iL-zLe"/>
+                        <outlet property="setButton" destination="QGg-oJ-Xmb" id="Qi7-5H-yLq"/>
+                        <outlet property="startButton" destination="uMp-to-hVZ" id="MvA-EK-GwF"/>
+                        <outlet property="stopButton" destination="H09-c4-m5b" id="uk2-HD-iuS"/>
+                        <outlet property="timerLabel" destination="jzH-dS-IyB" id="H0g-i9-CXi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWk-dU-x4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="321" y="945"/>
         </scene>
     </scenes>
 </document>
