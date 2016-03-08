@@ -499,6 +499,7 @@
 				AC7A71421C8EAFBB00274C5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC7A71431C8EAFBB00274C5A /* Build configuration list for PBXNativeTarget "AllTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +508,7 @@
 				AC7A71451C8EAFBB00274C5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC7A71461C8EAFBB00274C5A /* Build configuration list for PBXNativeTarget "AllTimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +517,7 @@
 				AC7A71481C8EAFBB00274C5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

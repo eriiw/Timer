@@ -9,9 +9,7 @@
 import UIKit
 import AVFoundation
 
-class countdownViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    
+class countdownViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {    
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var selecttimeButton: UIButton!
@@ -25,17 +23,13 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     
     
-    
-    
-    //タイマー作動中の付属ボタン↓
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var loopButton: UIButton!
     
+    //タイマー作動中の付属ボタン↑
     
-    
-
     
     var startTime: NSTimeInterval? = nil
     var timer: NSTimer?
@@ -322,6 +316,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     
     //時間選択を押した時
+    
     @IBAction func tapedselectButton(sender: AnyObject) {
         datePicker.hidden = false;
         setButtonEnabled(false, close: true, selectTime: false, stop: false, reset: false, loop: false, itb: false, set: false)
@@ -329,27 +324,32 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
     }
     //ピッカーを閉じる
-    @IBAction func tapedclosedButton(sender: AnyObject) {
-           datePicker.hidden = true;
+  
+        
+   
+    @IBAction func tapedcloseButton(sender: AnyObject) {
+        datePicker.hidden = true;
         setButtonEnabled(true, close: false, selectTime: false, stop: false, reset: false, loop: true, itb: true, set: false)
         
     }
     
     //インターバルボタンのアクション
+   
     @IBAction func itbButton(sender: AnyObject) {
         pickerView.hidden = false;
         itbLabel.hidden = false;        setButtonEnabled(false, close: false, selectTime: false, stop: false, reset: false, loop: false, itb: false, set: true)
         
     }
     //インターバル選択を閉じる
+    
     @IBAction func setButton(sender: AnyObject) {
         setButtonEnabled(false, close: false, selectTime: true, stop: false, reset: false, loop: true, itb: true, set: false)
         pickerView.hidden = true;
     }
     
     //ピッカーのアクション
+    
     @IBAction func datePicker(sender: AnyObject) {
-        
         //datePicker.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         var hour: Int =  0
         var minute: Int = 0
@@ -374,6 +374,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     //タイマー作動中のボタン
     
+   
     @IBAction func loopButton(sender: AnyObject) {
         setButtonEnabled(false, close: false, selectTime: false, stop: true, reset: false, loop: false, itb: false, set: false)
         self.startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -387,10 +388,12 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     
     
+   
     @IBAction func startButton(sender: AnyObject) {
         setButtonEnabled(false, close: false, selectTime: false, stop: true, reset: false, loop: false, itb: false, set: false)
         self.startTime = NSDate.timeIntervalSinceReferenceDate()
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1,target:self,selector:Selector("update"),userInfo:nil,repeats: true)    }
+    
     
     
     
@@ -402,6 +405,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     
     
+   
     @IBAction func resetButton(sender: AnyObject) {
         setButtonEnabled(false, close: false, selectTime: true, stop: false, reset: false, loop: false, itb: false, set: false)
         
