@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,11 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4O-JX-HMY">
-                                <rect key="frame" x="92" y="167" width="108" height="45"/>
+                                <rect key="frame" x="106" y="152" width="108" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="タイマー"/>
                                 <connections>
                                     <segue destination="Xp5-YP-U8a" kind="modal" id="0GP-RO-3Jh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-cQ-O83">
+                                <rect key="frame" x="56" y="237" width="208" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="ストップウォッチ"/>
+                                <connections>
+                                    <segue destination="eqb-Iq-hf2" kind="modal" id="mjc-tH-YdR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,6 +159,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWk-dU-x4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="321" y="945"/>
+        </scene>
+        <!--Stop Timer View Controller-->
+        <scene sceneID="Eoi-Jo-gcq">
+            <objects>
+                <viewController id="eqb-Iq-hf2" customClass="stopTimerViewController" customModule="AllTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cdH-Qw-vHf"/>
+                        <viewControllerLayoutGuide type="bottom" id="63I-hX-5z7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JEG-Q7-6Tu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qv-SQ-pGz">
+                                <rect key="frame" x="153" y="50" width="107" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="afg-CM-YT8">
+                                <rect key="frame" x="20" y="106" width="280" height="176"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsg-IF-cex">
+                                <rect key="frame" x="14" y="290" width="292" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aF-jd-Ceb">
+                                <rect key="frame" x="58" y="396" width="46" height="30"/>
+                                <state key="normal" title="start"/>
+                                <connections>
+                                    <action selector="startButton:" destination="eqb-Iq-hf2" eventType="touchUpInside" id="nOr-W1-jzS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3u-vX-KJz">
+                                <rect key="frame" x="137" y="396" width="46" height="30"/>
+                                <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="stopButton:" destination="eqb-Iq-hf2" eventType="touchUpInside" id="eQu-Vy-ERE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2of-aG-Dq4">
+                                <rect key="frame" x="224" y="396" width="46" height="30"/>
+                                <state key="normal" title="reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="eqb-Iq-hf2" eventType="touchUpInside" id="3dy-bH-5Hg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5N-s1-tcx">
+                                <rect key="frame" x="36" y="42" width="90" height="30"/>
+                                <state key="normal" title="ラップタイム"/>
+                                <connections>
+                                    <action selector="lapButton:" destination="eqb-Iq-hf2" eventType="touchUpInside" id="K8o-XP-q88"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="lapButton" destination="i5N-s1-tcx" id="9QK-1R-GzH"/>
+                        <outlet property="laptimerLabel" destination="8qv-SQ-pGz" id="VlK-O6-be2"/>
+                        <outlet property="resetButton" destination="i5N-s1-tcx" id="YG0-7G-hf3"/>
+                        <outlet property="startButton" destination="0aF-jd-Ceb" id="S8z-eC-YCc"/>
+                        <outlet property="stopButton" destination="z3u-vX-KJz" id="HJL-uG-2oM"/>
+                        <outlet property="timeTable" destination="afg-CM-YT8" id="rTy-rB-QBK"/>
+                        <outlet property="timerLabel" destination="nsg-IF-cex" id="Whc-MC-48N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MzB-ry-nRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="557" y="546"/>
         </scene>
     </scenes>
 </document>

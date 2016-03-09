@@ -237,24 +237,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 
                 
             }}
-        
-        /*/ 終了判定 3分が00:00になったら isEqualToString:文字の比較
-        if self.timerLabel == 0 {
-        self.timer?.invalidate()
-        //timerを生成する.
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onUpdate:", userInfo: nil, repeats: true)
-        
-        
-        }
-        if self.itbLabel == 0 {
-        self.timer?.invalidate()
-        
-        //timerを生成する.
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onUpdate:", userInfo: nil, repeats: true)
-        
-        
-        }*/
-        
+                
         
         
         
