@@ -9,12 +9,12 @@
 import UIKit
 import AVFoundation
 
-class countdownViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {    
+class countdownViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var selecttimeButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var pickerView2: UIPickerView!
     @IBOutlet weak var itbLabel: UILabel!
     @IBOutlet weak var itbButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -49,8 +49,15 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     
     
+    ///////メイン
+    // 表示データ定数　配列
+    let LIST01:NSArray = ["0分", "1分", "2分", "3分", "4分", "5分", "6分", "7分", "8分", "9分", "10分", "11分", "12分", "13分", "14分", "15分", "16分", "17分", "18分", "19分", "20分", "21分", "22分", "23分", "24分", "25分", "26分", "27分", "28分", "29分", "30分", "31分", "32分", "33分", "34分", "35分", "36分", "37分", "38分", "39分", "40分", "41分", "42分", "43分", "44分", "45分", "46分", "47分", "48分", "49分", "50分", "51分", "52分", "53分", "54分", "55分", "56分", "57分", "58分", "59分"]
+    let LIST02:NSArray = ["0分", "1分", "2分", "3分", "4分", "5分", "6分", "7分", "8分", "9分", "10分", "11分", "12分", "13分", "14分", "15分", "16分", "17分", "18分", "19分", "20分", "21分", "22分", "23分", "24分", "25分", "26分", "27分", "28分", "29分", "30分", "31分", "32分", "33分", "34分", "35分", "36分", "37分", "38分", "39分", "40分", "41分", "42分", "43分", "44分", "45分", "46分", "47分", "48分", "49分", "50分", "51分", "52分", "53分", "54分", "55分", "56分", "57分", "58分", "59分"]
+    let LIST03:NSArray = ["00秒", "01秒", "02秒", "03秒", "04秒", "05秒", "06秒", "07秒", "08秒", "09秒", "10秒", "11秒", "12秒", "13秒", "14秒", "15秒", "16秒", "17秒", "18秒", "19秒", "20秒", "21秒", "22秒", "23秒", "24秒", "25秒", "26秒", "27秒", "28秒", "29秒", "30秒", "31秒", "32秒", "33秒", "34秒", "35秒", "36秒", "37秒", "38秒", "39秒", "40秒", "41秒", "42秒", "43秒", "44秒", "45秒", "46秒", "47秒", "48秒", "49秒", "50秒", "51秒", "52秒", "53秒", "54秒", "55秒", "56秒", "57秒", "58秒", "59秒"]
     
     
+    
+    ///////インターバル
     
     // 表示データ定数　配列
     var ITEM01:NSArray = ["0分", "1分", "2分", "3分", "4分", "5分", "6分", "7分", "8分", "9分", "10分", "11分", "12分", "13分", "14分", "15分", "16分", "17分", "18分", "19分", "20分", "21分", "22分", "23分", "24分", "25分", "26分", "27分", "28分", "29分", "30分", "31分", "32分", "33分", "34分", "35分", "36分", "37分", "38分", "39分", "40分", "41分", "42分", "43分", "44分", "45分", "46分", "47分", "48分", "49分", "50分", "51分", "52分", "53分", "54分", "55分", "56分", "57分", "58分", "59分"]
@@ -78,7 +85,14 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
         super.viewDidLoad()
         
         
+        /*/DatePickerの初期値
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let date = dateFormatter.dateFromString("00:00")
+        datePicker.date = date!
+        
+        */
         
         //ボタン表示非表示
         setButtonEnabled(false, close: false, selectTime: true, stop: false, reset: false, loop: false, itb: false, set: false)
@@ -97,6 +111,112 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /////////////メインのタイマー
+    // 設定（コンポーネント数（列数））
+    func numberOfComponentsInPickerView2(pickerView2: UIPickerView) -> Int {
+        return 3
+    }
+    
+    // 設定（行数）
+    func pickerView2(pickerView2: UIPickerView,
+        numberOfRowsInComponent component2: Int) -> Int {
+            if(component2 == 0){
+                return LIST01.count;  // 1列目の選択肢の数
+            } else {
+                return LIST02.count;  // 2列目の選択肢の数
+                return LIST03.count;  // 2列目の選択肢の数
+            }
+    }
+    
+    // 設定（文字列データ表示）
+    func pickerView2(pickerView2: UIPickerView,
+        titleForRow row: Int,                // 行
+        forComponent component2: Int) -> String! {   // 列
+            
+            if(component2 == 0){
+                return LIST01[row] as! String  // 1列目のrow番目に表示する値
+            }else{
+                return LIST02[row] as! String  // 2列目のrow番目に表示する値
+                return LIST03[row] as! String  // 2列目のrow番目に表示する値
+            }
+    }
+    
+    // データ選択時
+    func pickerView2(pickerView2: UIPickerView,
+        didSelectRow row: Int,     // 行
+        inComponent component2: Int) {   // 列
+            
+            // 選択行のインデックスを取得
+            var row01:NSInteger = pickerView2 .selectedRowInComponent(0) // 1列目の行
+            var row02:NSInteger = pickerView2 .selectedRowInComponent(1) // 2列目の行
+            var row03:NSInteger = pickerView2 .selectedRowInComponent(2) // 3列目の行
+            
+            
+            //インターバルタイマー
+            var hour: Int = 0
+            var minute: Int = 0
+            var second: Int = 0
+            
+            let LIST01String: String = LIST01[row01] as! String
+            
+            let list01 = LIST01String.stringByReplacingOccurrencesOfString("時", withString: "")
+            if let hourInt: Int? = Int(list01){
+                hour = hourInt!
+            }
+            let LIST02String: String = LIST02[row02] as! String
+            
+            let list02 = LIST02String.stringByReplacingOccurrencesOfString("分", withString: "")
+            if let minuteInt: Int? = Int(list02){
+                minute = minuteInt!
+            }
+            
+            let LIST03String: String = LIST03[row03] as! String
+            
+            let list03 = LIST03String.stringByReplacingOccurrencesOfString("秒", withString: "")
+            
+            if let secondInt: Int? = Int(list03){
+                second = secondInt!
+            }
+            //ミリ秒を計算
+            
+            
+            let msecond = minute * 60 + second
+            startCount = msecond
+            count = msecond
+            timerLabel.text = convertIntervalFlomSecond(count)
+            
+            let hourleft = LIST01[row01].stringByReplacingOccurrencesOfString("時", withString: "")
+            
+            let minuteright = LIST02[row02].stringByReplacingOccurrencesOfString("分", withString: "")
+            
+            let secondright = LIST03[row03].stringByReplacingOccurrencesOfString("秒", withString: "")
+            
+            // 値の表示
+            self.timerLabel.text =
+                NSString(format:"%@ %@ %@", "\(LIST01[row01])","\(LIST02[row02])","\(LIST03[row03])") as String
+            
+            
+            
+            //00:00表示の桁
+            func toCountString(count: Int) ->String {
+                //分を求める（１８０を６０で割ると3分）
+                let hour = Int(count / 3600)
+                let minute = Int(count % 3600 / 60)
+                //余りをだす
+                let second = count % 60
+                return String(format:"%02d:%02d:%02d", hour, minute, second)
+            }
+            
+            
+            
+            
+            
+            
+    }
+
+    
+    /////////////インターバル
     
     // 設定（コンポーネント数（列数））
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -185,6 +305,15 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     func update(){
         
+        
+        //２つのピッカーを管理
+        func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
+            if pickerView == pickerView2 {
+                return count2
+            } else {
+                return count 
+            }
+        }
         //インターバル処理
         if isInterval {
             
@@ -237,7 +366,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 
                 
             }}
-                
+        
         
         
         
@@ -301,23 +430,22 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     //時間選択を押した時
     
     @IBAction func tapedselectButton(sender: AnyObject) {
-        datePicker.hidden = false;
-        setButtonEnabled(false, close: true, selectTime: false, stop: false, reset: false, loop: false, itb: false, set: false)
+       pickerView2.hidden = false;        setButtonEnabled(false, close: true, selectTime: false, stop: false, reset: false, loop: false, itb: false, set: false)
         self.timerLabel.text = "00:00:00"
         
     }
     //ピッカーを閉じる
-  
-        
-   
+    
+    
+    
     @IBAction func tapedcloseButton(sender: AnyObject) {
-        datePicker.hidden = true;
+        
         setButtonEnabled(true, close: false, selectTime: false, stop: false, reset: false, loop: true, itb: true, set: false)
         
     }
     
     //インターバルボタンのアクション
-   
+    
     @IBAction func itbButton(sender: AnyObject) {
         pickerView.hidden = false;
         itbLabel.hidden = false;        setButtonEnabled(false, close: false, selectTime: false, stop: false, reset: false, loop: false, itb: false, set: true)
@@ -330,34 +458,11 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
         pickerView.hidden = true;
     }
     
-    //ピッカーのアクション
-    
-    @IBAction func datePicker(sender: AnyObject) {
-        //datePicker.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-        var hour: Int =  0
-        var minute: Int = 0
-        let hourString: String = format(datePicker.date,style: "HH")
-        if let hourInt: Int? = Int(hourString){
-            hour = hourInt!
-        }
-        
-        let minuteString: String = format(datePicker.date,style: "mm")
-        if let minuteInt: Int? = Int(minuteString){
-            minute = minuteInt!
-        }
-        
-        let second = hour * 3600 + minute * 60
-        startCount = second
-        count = second
-        timerLabel.text = toCountString(count)
-        
-        
-    }
-    
+       
     
     //タイマー作動中のボタン
     
-   
+    
     @IBAction func loopButton(sender: AnyObject) {
         setButtonEnabled(false, close: false, selectTime: false, stop: true, reset: false, loop: false, itb: false, set: false)
         self.startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -371,7 +476,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     
     
-   
+    
     @IBAction func startButton(sender: AnyObject) {
         setButtonEnabled(false, close: false, selectTime: false, stop: true, reset: false, loop: false, itb: false, set: false)
         self.startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -388,7 +493,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     
     
-   
+    
     @IBAction func resetButton(sender: AnyObject) {
         setButtonEnabled(false, close: false, selectTime: true, stop: false, reset: false, loop: false, itb: false, set: false)
         

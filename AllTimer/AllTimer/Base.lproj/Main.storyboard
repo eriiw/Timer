@@ -86,15 +86,6 @@
                                     <action selector="startButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="XR5-pa-fAh"/>
                                 </connections>
                             </button>
-                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72H-LZ-F9T">
-                                <rect key="frame" x="0.0" y="257" width="320" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="479114207.59637803">
-                                    <!--2016-03-08 07:16:47 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="datePicker:" destination="Xp5-YP-U8a" eventType="valueChanged" id="ZnN-5s-Fot"/>
-                                </connections>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H09-c4-m5b">
                                 <rect key="frame" x="51" y="224" width="46" height="30"/>
                                 <state key="normal" title="Stop"/>
@@ -137,17 +128,24 @@
                                     <outlet property="delegate" destination="Xp5-YP-U8a" id="AiI-rW-mRF"/>
                                 </connections>
                             </pickerView>
+                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8e-5H-b79">
+                                <rect key="frame" x="0.0" y="273" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xp5-YP-U8a" id="MKd-rF-v3v"/>
+                                    <outlet property="delegate" destination="Xp5-YP-U8a" id="izw-VL-qCb"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="closeButton" destination="FVL-xW-hNt" id="ygx-MD-coH"/>
-                        <outlet property="datePicker" destination="72H-LZ-F9T" id="AOV-0F-9B4"/>
                         <outlet property="itbButton" destination="nG9-zV-B0e" id="mQq-li-IzJ"/>
                         <outlet property="itbLabel" destination="U3f-w8-zHu" id="NLf-Rd-bEs"/>
                         <outlet property="loopButton" destination="HlM-sN-g83" id="15y-ZK-TQ9"/>
                         <outlet property="pickerView" destination="jmo-6e-9t8" id="PGU-mC-c3L"/>
+                        <outlet property="pickerView2" destination="t8e-5H-b79" id="V08-Me-mHt"/>
                         <outlet property="resetButton" destination="n02-sC-b1D" id="t49-ga-6iN"/>
                         <outlet property="selecttimeButton" destination="wzo-ga-yDV" id="JhJ-UR-ld3"/>
                         <outlet property="setButton" destination="QGg-oJ-Xmb" id="872-9Y-TYT"/>
