@@ -121,18 +121,18 @@
                                     <action selector="tapedcloseButton:" destination="Xp5-YP-U8a" eventType="touchUpInside" id="b6I-Bn-HVb"/>
                                 </connections>
                             </button>
-                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmo-6e-9t8">
+                            <pickerView hidden="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmo-6e-9t8">
                                 <rect key="frame" x="0.0" y="257" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Xp5-YP-U8a" id="UZV-AI-7Vk"/>
                                     <outlet property="delegate" destination="Xp5-YP-U8a" id="AiI-rW-mRF"/>
                                 </connections>
                             </pickerView>
-                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8e-5H-b79">
-                                <rect key="frame" x="0.0" y="273" width="320" height="216"/>
+                            <pickerView hidden="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-s9-Ymo">
+                                <rect key="frame" x="-20" y="289" width="320" height="216"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="Xp5-YP-U8a" id="MKd-rF-v3v"/>
-                                    <outlet property="delegate" destination="Xp5-YP-U8a" id="izw-VL-qCb"/>
+                                    <outlet property="dataSource" destination="Xp5-YP-U8a" id="iXL-Kn-PDV"/>
+                                    <outlet property="delegate" destination="Xp5-YP-U8a" id="ZNK-hD-qEs"/>
                                 </connections>
                             </pickerView>
                         </subviews>
@@ -145,7 +145,7 @@
                         <outlet property="itbLabel" destination="U3f-w8-zHu" id="NLf-Rd-bEs"/>
                         <outlet property="loopButton" destination="HlM-sN-g83" id="15y-ZK-TQ9"/>
                         <outlet property="pickerView" destination="jmo-6e-9t8" id="PGU-mC-c3L"/>
-                        <outlet property="pickerView2" destination="t8e-5H-b79" id="V08-Me-mHt"/>
+                        <outlet property="pickerView2" destination="Vyw-s9-Ymo" id="QUl-Qq-vvq"/>
                         <outlet property="resetButton" destination="n02-sC-b1D" id="t49-ga-6iN"/>
                         <outlet property="selecttimeButton" destination="wzo-ga-yDV" id="JhJ-UR-ld3"/>
                         <outlet property="setButton" destination="QGg-oJ-Xmb" id="872-9Y-TYT"/>
