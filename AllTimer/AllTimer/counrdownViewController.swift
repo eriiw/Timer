@@ -48,6 +48,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var isLoop2 = false
     var isInterval = false
     var playPicker = false
+    var isSet = false
     
     
     //通常のデータ
@@ -316,6 +317,16 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     func update(){
         
+        //ボタンとラベルの制御
+        
+        if isSet {
+            if count > 0 {
+                
+                isSet = true
+            }
+            
+            
+        }
         
         
         
