@@ -463,6 +463,7 @@ class countdownViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBAction func tapedselectButton(sender: AnyObject) {
         pickerView2.hidden = false;
+        
         setButtonEnabled(false, close: true, selectTime: false, stop: false, reset: false, loop: false, itb: false, set: false)
         self.timerLabel.text = "00:00:00"
         
